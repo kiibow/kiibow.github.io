@@ -1,0 +1,474 @@
+@charset "utf-8";
+
+/* 全体 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: left top;
+}
+
+.wrapper {
+  max-width: 1088px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* グーグルマップAPI */
+
+#map {
+  height: 897px;
+  width: auto;
+}
+
+/* ヘッダー */
+
+header {
+  height: 96px;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-right {
+  padding: 0 0 0 8px;
+}
+
+.main-left img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header-logo {
+  padding: 25px;
+}
+
+.sp-menu {
+  display: none;
+}
+
+.sp-menu #open {
+  font-size: 32px;
+  line-height: 96px;
+  cursor: pointer;
+}
+
+.pc-menu nav {
+  box-sizing: border-box;
+}
+
+.pc-menu nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.pc-menu nav ul li {
+  list-style: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.pc-menu nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 96px;
+  display: block;
+  text-align: center;
+  width: 100px;
+}
+
+.pc-menu nav ul li a:hover {
+  text-decoration: underline;
+  color: #004BB1;
+}
+
+.overlay {
+  position: fixed;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
+  z-index: 999;
+}
+
+.overlay #close {
+  position: absolute;
+  position: fixed;
+  top: 32px;
+  right: 30px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.overlay ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay ul li {
+  list-style-type: none;
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+.overlay.show li:nth-child(4) {
+  transition-delay: .4s;
+}
+
+.overlay.show li:nth-child(5) {
+  transition-delay: .4s;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.overlay ul li a {
+  text-decoration: none;
+}
+
+
+.sp-menu #open.hide {
+  display: none;
+}
+
+/* メイン */
+
+.container {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.main-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-left a:hover {
+  opacity: 0.5;
+}
+
+.main-right a:hover {
+  opacity: 0.5;
+}
+
+/* セクション */
+
+section {
+  text-align: center;
+  color: #fff;
+}
+
+.wrapper section h2 {
+  font-size: 37px;
+}
+
+.wrapper section h3 {
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.wrapper section h4 {
+  margin-bottom: 50px;
+}
+
+.wrapper section p {
+  margin-bottom: 50px;
+}
+
+.section-image {
+  width: 100%;
+  height: 560px;
+  background-image: url("../img/mainyoko.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 100px;
+}
+
+/* セクション２ */
+
+section.cmt-section {
+  display: flex;
+}
+
+
+.section-cmt {
+  /*  float: left;*/
+  margin-bottom: 100px;
+}
+
+.section-cmt-text {
+  width: 400px;
+  /*  float: left;*/
+  margin-left: 90px;
+  text-align: left;
+}
+
+.section-cmt-text h5 {
+  margin: 0;
+  font-size: 37px;
+}
+
+.section-cmt-text p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 110px;
+}
+
+.section-cmt-img {
+  width: 100%;
+  height: auto;
+}
+
+/* セクション３ */
+
+.section-menu {
+  display: flex;
+  justify-content: center;
+  clear: both;
+  margin-bottom: 100px;
+}
+
+.section-menu-left {
+  position: relative;
+  background-image: url("../img/boozy-refreshing-blue-hawaii-cocktail-CHV4VSW.jpg");
+  background-size: cover;
+  width: 50%;
+  height: 560px;
+}
+
+.section-menu-right {
+  position: relative;
+  background-image: url("../img/asian-cuisine-noodles-stir-fry-udon-63CBVG6.JPG");
+  background-size: cover;
+  width: 50%;
+  height: 560px;
+}
+
+.section-menu-box {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  color: #fff;
+  font-size: 36px;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.section-menu-box a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.section-menu-txt p {
+  margin-top: 100px;
+  text-shadow: 2px 2px #000;
+}
+
+.section-menu-txt p:nth-child(3) {
+  border: 1px solid #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* アサイド */
+
+aside {
+  color: #fff;
+  margin-bottom: 180px;
+}
+
+.aside-news {
+  width: 100%;
+  height: 46px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+}
+
+.aside-news h5 {
+  line-height: 46px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+/* ニュース */
+
+.wrapper dl dt {
+  margin-top: 20px;
+}
+
+.wrapper dl dd {
+  margin-top: 17px;
+  margin: 0;
+}
+
+/* リザーブ */
+
+.reserve {
+  padding-bottom: 380px;
+  color: #fff;
+  text-align: center;
+}
+
+.reserve-txt {
+  margin-bottom: 120px;
+  font-size: 37px;
+}
+
+.reserve-box {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+
+.reserve-box button img {
+  display: none;
+}
+
+.btn {
+  width: 239px;
+  height: 80px;
+  background-color: #fff;
+  margin-right: 20px;
+  border: 1px solid #707070;
+  position: relative;
+}
+
+.btn h4 {
+  font-size: 20px;
+  color: #000;
+  text-align: left;
+  margin: 0;
+  line-height: 80px;
+  padding-left: 20px;
+}
+
+.btn img {
+  position: absolute;
+  top: 35px;
+  right: 15px;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.contact {
+  margin-bottom: 100px;
+  color: #fff;
+}
+
+.contact h4 {
+  font-size: 37px;
+}
+
+.contact p {
+  margin-bottom: 30px;
+}
+
+.contact p:hover {
+  text-decoration: underline;
+}
+
+.hp {
+  padding: 20px;
+  background-color: #004BB1;
+  border-radius: 10px;
+  font-size: 1em;
+  color: #fff;
+  border: none;
+  margin-right: 100px;
+}
+
+.cp {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-size: 1em;
+  color: #fff;
+  border: #CDD6DD;
+}
+
+footer .footer-box {
+  display: flex;
+  color: #fff;
+}
+
+footer .footer-right {
+  margin-right: 20px;
+}
+
+footer .footer-right ul {
+  margin: 0;
+}
+
+footer .footer-right ul li {
+  list-style: none;
+}
+
+footer .footer-right ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer {
+  display: flex;
+  position: relative;
+  height: 168px;
+  margin-top: 100px;
+}
+
+footer .footer-box-right {
+  position: absolute;
+  right: 100px;
+}
+
+footer .footer-box-right img {
+  padding: 20px;
+}
